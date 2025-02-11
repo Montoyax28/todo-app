@@ -5,4 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css'],
 })
-export class TodoComponent {}
+export class TodoComponent {
+  get date() {
+    return new Date().toDateString();
+  }
+}
