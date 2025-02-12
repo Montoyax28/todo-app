@@ -1,0 +1,20 @@
+<div class="task-list">
+  <div
+    *ngFor="let tarea of tareas; let i = index"
+    class="task bg-gray-200 p-4 rounded-lg mb-2"
+  >
+    <h3 class="text-lg font-bold">{{ tarea.title }}</h3>
+    <p class="break-words">{{ tarea.description }}</p>
+    <p><strong>Hora:</strong> {{ tarea.time }}</p>
+
+    <label>
+      <input
+        type="checkbox"
+        class="text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+        [checked]="tarea.completed"
+        (change)="cambiarEstado(i, !tarea.completed)"
+      />
+      Completada
+    </label>
+  </div>
+</div>
